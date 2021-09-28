@@ -26,5 +26,7 @@ Auth::routes();
 		
 		Route::get('/employee', [App\Http\Controllers\EmployeeController::class, 'index']);		
 		Route::match(['GET','POST'],'/addemployee',[App\Http\Controllers\EmployeeController::class, 'addEmp']);
+		Route::get('/editemployee/{id}',[App\Http\Controllers\EmployeeController::class, 'editEmp']);
+		Route::get('/deleteemployee/{id}',[App\Http\Controllers\EmployeeController::class, 'deleteEmp']);
 		
     });

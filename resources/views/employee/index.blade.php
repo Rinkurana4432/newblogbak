@@ -18,6 +18,11 @@
                   <a href="{{url('addemployee')}}" class="btn btn-primary">Add</a>
                 </div>
               <!-- /.card-header -->
+			    <span>
+				@if (Session::has('message'))
+					<li>{!! session('message') !!}</li>
+			   @endif
+				</span>
 				<div class="card-body">
 				 <table id="example2" class="table table-bordered table-hover">
 							  <thead>
@@ -39,7 +44,8 @@
 										<td>{{ $value->emp_name }}</td>
 										<td>{{ $value->emp_phone }}</td>
 										<td>{{ $value->email }}</td>
-										<td><a class="btn btn-primary" href="{{ url('editemployee',$value->id) }}">Edit</a></td>
+										<td><a class="btn btn-primary" href="{{ url('editemployee',$value->id) }}">Edit</a> <a class="btn btn-primary" href="{{ url('deleteemployee',$value->id) }}">Delete</a></td>
+									
 									</tr>
 								
 								
